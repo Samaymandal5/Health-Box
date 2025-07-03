@@ -7,6 +7,7 @@ import {
   BrainCircuit,
   HeartPulse,
   ArrowRight,
+  Gem,
 } from "lucide-react";
 import {
   Card,
@@ -60,6 +61,13 @@ const features = [
     description: "Explore a library of tips for a healthier lifestyle.",
     link: "/dashboard/wellness-corner",
     color: "text-pink-500",
+  },
+  {
+    icon: Gem,
+    title: "Subscription Plans",
+    description: "Unlock premium features with our monthly and yearly plans.",
+    link: "/dashboard/subscription",
+    color: "text-yellow-500",
   },
 ];
 

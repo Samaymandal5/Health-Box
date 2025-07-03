@@ -15,6 +15,7 @@ import {
   Dumbbell,
   BrainCircuit,
   HeartPulse,
+  Gem,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +27,7 @@ const navItems = [
   { href: "/dashboard/exercise-planner", icon: Dumbbell, label: "Exercise Planner" },
   { href: "/dashboard/mental-health", icon: BrainCircuit, label: "Mental Health" },
   { href: "/dashboard/wellness-corner", icon: HeartPulse, label: "Wellness Corner" },
+  { href: "/dashboard/subscription", icon: Gem, label: "Subscription" },
 ];
 
 export function DashboardNav() {
