@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Logo } from "@/components/logo";
+import { FullLogo } from "@/components/full-logo";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -25,13 +25,13 @@ export default function LoginPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-background">
       <Card className="mx-auto max-w-sm w-full">
-        <CardHeader className="space-y-1 text-center">
+        <CardHeader className="space-y-2 text-center">
           <div className="flex justify-center mb-4">
-            <Logo />
+            <FullLogo className="w-48 h-auto" />
           </div>
-          <CardTitle className="text-2xl font-bold">Login to HEALTH BOX</CardTitle>
+          <CardTitle className="text-2xl font-bold">Login</CardTitle>
           <CardDescription>
-            Enter your credentials to access your Medical Center account
+            Enter your credentials to access your account
           </CardDescription>
         </CardHeader>
         <CardContent>

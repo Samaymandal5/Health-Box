@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Logo } from "@/components/logo";
+import { FullLogo } from "@/components/full-logo";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -24,11 +24,11 @@ export default function SignupPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-background">
       <Card className="mx-auto max-w-sm w-full">
-        <CardHeader className="space-y-1 text-center">
+        <CardHeader className="space-y-2 text-center">
           <div className="flex justify-center mb-4">
-            <Logo />
+            <FullLogo className="w-48 h-auto" />
           </div>
-          <CardTitle className="text-2xl font-bold">Create a HEALTH BOX Account</CardTitle>
+          <CardTitle className="text-2xl font-bold">Create an Account</CardTitle>
           <CardDescription>
             Enter your information to get started
           </CardDescription>
