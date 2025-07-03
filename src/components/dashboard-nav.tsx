@@ -35,18 +35,19 @@ export function DashboardNav() {
     <SidebarMenu>
       {navItems.map((item) => (
         <SidebarMenuItem key={item.href}>
-          <Link href={item.href} legacyBehavior passHref>
-            <SidebarMenuButton
-              isActive={pathname === item.href}
-              className={cn(
-                "w-full justify-start",
-                pathname === item.href && "bg-primary/10 text-primary"
-              )}
-            >
+          <SidebarMenuButton
+            asChild
+            isActive={pathname === item.href}
+            className={cn(
+              "w-full justify-start",
+              pathname === item.href && "bg-primary/10 text-primary"
+            )}
+          >
+            <Link href={item.href}>
               <item.icon className="h-5 w-5 mr-3" />
               <span>{item.label}</span>
-            </SidebarMenuButton>
-          </Link>
+            </Link>
+          </SidebarMenuButton>
         </SidebarMenuItem>
       ))}
     </SidebarMenu>
