@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -68,6 +68,17 @@ export function MedicineSuggestion() {
     }
   }
 
+  const renderWithBold = (text: string) => {
+    if (!text) return null;
+    const parts = text.split(/\*\*(.*?)\*\*/g);
+    return parts.map((part, index) => {
+      if (index % 2 === 1) {
+        return <strong key={index}>{part}</strong>;
+      }
+      return <Fragment key={index}>{part}</Fragment>;
+    });
+  };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <Card>
@@ -128,7 +139,7 @@ export function MedicineSuggestion() {
               <div>
                 <h3 className="font-semibold mb-2">Suggested Medicines:</h3>
                 <p className="text-sm whitespace-pre-wrap">
-                  {suggestion.suggestedMedicines}
+                  {renderWithBold(suggestion.suggestedMedicines)}
                 </p>
               </div>
               <Alert variant="destructive">
