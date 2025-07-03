@@ -29,9 +29,9 @@ export default function LoginPage() {
           <div className="flex justify-center mb-4">
             <Logo />
           </div>
-          <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
+          <CardTitle className="text-2xl font-bold">Login to HEALTH BOX</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account
+            Enter your credentials to access your Medical Center account
           </CardDescription>
         </CardHeader>
         <CardContent>

@@ -3,8 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MediGem AI",
-  description: "Your Personal AI Health Assistant",
+  title: "HEALTH BOX",
+  description: "Your Personal Medical Center",
 };
 
 export default function RootLayout({

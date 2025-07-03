@@ -28,9 +28,9 @@ export default function SignupPage() {
           <div className="flex justify-center mb-4">
             <Logo />
           </div>
-          <CardTitle className="text-2xl font-bold">Create an account</CardTitle>
+          <CardTitle className="text-2xl font-bold">Create a HEALTH BOX Account</CardTitle>
           <CardDescription>
-            Enter your information to create an account
+            Enter your information to get started
           </CardDescription>
         </CardHeader>
         <CardContent>

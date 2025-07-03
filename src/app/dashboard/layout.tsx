@@ -41,7 +41,7 @@ export default function DashboardLayout({
             <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
               <Link href="/dashboard" className="flex items-center gap-2 font-semibold">
                 <Logo className="h-8 w-8" />
-                <span className="font-headline text-xl">MediGem AI</span>
+                <span className="font-headline text-xl">HEALTH BOX</span>
               </Link>
             </div>
             <div className="flex-1">
@@ -83,7 +83,7 @@ export default function DashboardLayout({
                 <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
                   <Link href="/dashboard" className="flex items-center gap-2 font-semibold">
                     <Logo className="h-8 w-8" />
-                    <span className="font-headline text-lg">MediGem AI</span>
+                    <span className="font-headline text-lg">HEALTH BOX</span>
                   </Link>
                 </div>
                 <nav className="grid gap-2 text-lg font-medium p-4">
