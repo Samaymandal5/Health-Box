@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -50,6 +50,17 @@ export function AiChatAssistant() {
       question: "",
     },
   });
+
+  const renderWithBold = (text: string) => {
+    if (!text) return null;
+    const parts = text.split(/\*\*(.*?)\*\*/g);
+    return parts.map((part, index) => {
+      if (index % 2 === 1) {
+        return <strong key={index}>{part}</strong>;
+      }
+      return <Fragment key={index}>{part}</Fragment>;
+    });
+  };
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
@@ -110,7 +121,9 @@ export function AiChatAssistant() {
                   }`}
                 >
                   <p className="text-sm whitespace-pre-wrap">
-                    {message.content}
+                    {message.role === "user"
+                      ? message.content
+                      : renderWithBold(message.content)}
                   </p>
                 </div>
                 {message.role === "user" && (

@@ -146,7 +146,7 @@ export function MedicineSuggestion() {
                 <Terminal className="h-4 w-4" />
                 <AlertTitle>Disclaimer</AlertTitle>
                 <AlertDescription>
-                  {suggestion.disclaimer}
+                  {renderWithBold(suggestion.disclaimer)}
                 </AlertDescription>
               </Alert>
             </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -51,6 +51,17 @@ export function MentalHealthSupport() {
       preference: "",
     },
   });
+
+  const renderWithBold = (text: string | null) => {
+    if (!text) return null;
+    const parts = text.split(/\*\*(.*?)\*\*/g);
+    return parts.map((part, index) => {
+      if (index % 2 === 1) {
+        return <strong key={index}>{part}</strong>;
+      }
+      return <Fragment key={index}>{part}</Fragment>;
+    });
+  };
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
@@ -155,7 +166,7 @@ export function MentalHealthSupport() {
             <div className="space-y-4">
               <div>
                 <h3 className="font-semibold mb-2">Support Type: {support.supportType}</h3>
-                <p className="text-sm whitespace-pre-wrap">{support.suggestions}</p>
+                <p className="text-sm whitespace-pre-wrap">{renderWithBold(support.suggestions)}</p>
               </div>
             </div>
           )}
