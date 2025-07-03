@@ -8,10 +8,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 const monthlyPlan = {
   name: "Monthly Plan",
-  price: "₹399",
+  price: "$9.99",
   period: "/month",
   features: [
     "Unlimited AI Assistant access",
@@ -20,11 +21,12 @@ const monthlyPlan = {
     "Mental health support",
     "Priority support",
   ],
+  planQuery: "monthly",
 };
 
 const yearlyPlan = {
   name: "Yearly Plan",
-  price: "₹3999",
+  price: "$99",
   period: "/year",
   features: [
     "All features from Monthly Plan",
@@ -33,6 +35,7 @@ const yearlyPlan = {
     "Exclusive access to new features",
   ],
   isPopular: true,
+  planQuery: "yearly",
 };
 
 export default function SubscriptionPage() {
@@ -67,19 +70,25 @@ export default function SubscriptionPage() {
             </ul>
           </CardContent>
           <CardFooter>
-            <Button className="w-full" variant="outline">Choose Plan</Button>
+            <Button className="w-full" variant="outline" asChild>
+              <Link href={`/dashboard/payment?plan=${monthlyPlan.planQuery}`}>
+                Choose Plan
+              </Link>
+            </Button>
           </CardFooter>
         </Card>
 
         <Card className="flex flex-col rounded-lg shadow-lg hover:shadow-xl transition-shadow border-2 border-primary relative">
-           {yearlyPlan.isPopular && (
+          {yearlyPlan.isPopular && (
             <div className="absolute top-0 right-4 -mt-3 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
               Popular
             </div>
           )}
           <CardHeader>
             <CardTitle>{yearlyPlan.name}</CardTitle>
-            <CardDescription>Best value for long-term commitment.</CardDescription>
+            <CardDescription>
+              Best value for long-term commitment.
+            </CardDescription>
           </CardHeader>
           <CardContent className="flex-grow space-y-6">
             <div className="flex items-baseline">
@@ -98,7 +107,11 @@ export default function SubscriptionPage() {
             </ul>
           </CardContent>
           <CardFooter>
-            <Button className="w-full">Choose Plan</Button>
+            <Button className="w-full" asChild>
+              <Link href={`/dashboard/payment?plan=${yearlyPlan.planQuery}`}>
+                Choose Plan
+              </Link>
+            </Button>
           </CardFooter>
         </Card>
       </div>
