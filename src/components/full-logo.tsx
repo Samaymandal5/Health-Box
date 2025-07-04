@@ -25,10 +25,10 @@ export function FullLogo(props: React.SVGProps<SVGSVGElement>) {
       </g>
       
       {/* Text Part */}
-      <text x="60" y="36" fontFamily="'PT Sans', sans-serif" fontSize="16" fontWeight="bold" fill="#5A39A8">HEALTH BOX</text>
-      <line x1="60" y1="41" x2="135" y2="41" stroke="#E54D42" strokeWidth="2" />
-      <line x1="135" y1="41" x2="182" y2="41" stroke="#5A39A8" strokeWidth="2" />
-      <text x="121" y="54" fontFamily="'PT Sans', sans-serif" fontSize="10" fill="#E54D42" letterSpacing="0.5" textAnchor="middle">MEDICAL CENTER</text>
+      <text x="60" y="36" fontFamily="'PT Sans', sans-serif" fontSize="18" fontWeight="bold" fill="#5A39A8">HEALTH BOX</text>
+      <line x1="60" y1="41" x2="144" y2="41" stroke="#E54D42" strokeWidth="2" />
+      <line x1="144" y1="41" x2="197" y2="41" stroke="#5A39A8" strokeWidth="2" />
+      <text x="128.5" y="54" fontFamily="'PT Sans', sans-serif" fontSize="10" fill="#E54D42" letterSpacing="0.5" textAnchor="middle">MEDICAL CENTER</text>
     </svg>
   );
 }
