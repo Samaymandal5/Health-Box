@@ -22,7 +22,6 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { CreditCard, Landmark, Wallet } from 'lucide-react';
-import Image from 'next/image';
 
 const planDetails = {
   monthly: { name: 'Monthly Plan', price: '$9.99' },
@@ -103,7 +102,51 @@ function PaymentForm() {
                 Or scan QR code in your UPI app
               </p>
               <div className="flex justify-center">
-                 <Image src="/upi-qr-code.png" alt="UPI QR Code" data-ai-hint="qr code upi" width={200} height={200} />
+                <svg
+                  width="200"
+                  height="200"
+                  viewBox="0 0 100 100"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="rounded-md border"
+                >
+                  <rect width="100" height="100" fill="white" />
+                  <rect x="8" y="8" width="30" height="30" fill="black" />
+                  <rect x="13" y="13" width="20" height="20" fill="white" />
+                  <rect x="18" y="18" width="10" height="10" fill="black" />
+                  <rect x="62" y="8" width="30" height="30" fill="black" />
+                  <rect x="67" y="13" width="20" height="20" fill="white" />
+                  <rect x="72" y="18" width="10" height="10" fill="black" />
+                  <rect x="8" y="62" width="30" height="30" fill="black" />
+                  <rect x="13" y="67" width="20" height="20" fill="white" />
+                  <rect x="18" y="72" width="10" height="10" fill="black" />
+                  <path
+                    fill="black"
+                    d="M40 8 h5 v5 h-5z M48 8 h5 v5 h-5z M56 8 h5 v5 h-5z M40 16 h5 v5 h-5z M56 16 h5 v5 h-5z M40 24 h5 v5 h-5z M48 24 h5 v5 h-5z M56 24 h5 v5 h-5z M40 32 h5 v5 h-5z M48 32 h5 v5 h-5z M8 40 h5 v5 h-5z M16 40 h5 v5 h-5z M24 40 h5 v5 h-5z M32 40 h5 v5 h-5z M8 48 h5 v5 h-5z M24 48 h5 v5 h-5z M8 56 h5 v5 h-5z M16 56 h5 v5 h-5z M24 56 h5 v5 h-5z M32 56 h5 v5 h-5z M8 84 h5 v5 h-5z M16 84 h5 v5 h-5z M24 84 h5 v5 h-5z M32 84 h5 v5 h-5z M40 84 h5 v5 h-5z M48 84 h5 v5 h-5z M56 84 h5 v5 h-5z M64 84 h5 v5 h-5z M72 84 h5 v5 h-5z M80 84 h5 v5 h-5z M88 84 h5 v5 h-5z M40 76 h5 v5 h-5z M48 76 h5 v5 h-5z M56 76 h5 v5 h-5z M64 76 h5 v5 h-5z M72 76 h5 v5 h-5z M80 76 h5 v5 h-5z M88 76 h5 v5 h-5z M88 68 h5 v5 h-5z M88 60 h5 v5 h-5z M88 52 h5 v5 h-5z M88 44 h5 v5 h-5z M88 36 h5 v5 h-5z M88 28 h5 v5 h-5z M88 20 h5 v5 h-5z M88 12 h5 v5 h-5z M80 12 h5 v5 h-5z M72 20 h5 v5 h-5z M64 28 h5 v5 h-5z M72 36 h5 v5 h-5z M80 44 h5 v5 h-5z M64 52 h5 v5 h-5z M72 60 h5 v5 h-5z M80 68 h5 v5 h-5z M64 68 h5 v5 h-5z M40 60 h5 v5 h-5z M56 44 h5 v5 h-5z"
+                  />
+                  <rect x="39" y="39" width="22" height="22" fill="white" />
+                  <text
+                    x="50"
+                    y="48"
+                    fontFamily="sans-serif"
+                    fontSize="7"
+                    fill="hsl(var(--primary))"
+                    textAnchor="middle"
+                    fontWeight="bold"
+                  >
+                    Thank for
+                  </text>
+                  <text
+                    x="50"
+                    y="58"
+                    fontFamily="sans-serif"
+                    fontSize="7"
+                    fill="hsl(var(--primary))"
+                    textAnchor="middle"
+                    fontWeight="bold"
+                  >
+                    scan
+                  </text>
+                </svg>
               </div>
             </div>
           </TabsContent>
