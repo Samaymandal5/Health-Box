@@ -116,10 +116,9 @@ function PaymentForm() {
                     <SelectValue placeholder="Choose a bank" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="bank1">Bank of America</SelectItem>
-                    <SelectItem value="bank2">Chase Bank</SelectItem>
-                    <SelectItem value="bank3">Wells Fargo</SelectItem>
-                    <SelectItem value="bank4">Citibank</SelectItem>
+                    <SelectItem value="bank1">State Bank of India</SelectItem>
+                    <SelectItem value="bank2">Axis Bank</SelectItem>
+                    <SelectItem value="bank3">HDFC Bank</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
