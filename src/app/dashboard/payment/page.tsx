@@ -103,7 +103,7 @@ function PaymentForm() {
                 Or scan QR code in your UPI app
               </p>
               <div className="flex justify-center">
-                 <Image src="https://placehold.co/200x200.png" alt="QR Code" data-ai-hint="qr code" width={200} height={200} />
+                 <Image src="/upi-qr-code.png" alt="UPI QR Code" data-ai-hint="qr code upi" width={200} height={200} />
               </div>
             </div>
           </TabsContent>
