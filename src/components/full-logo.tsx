@@ -3,7 +3,7 @@ import * as React from "react";
 export function FullLogo(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      viewBox="0 0 200 60"
+      viewBox="0 0 240 60"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
@@ -25,10 +25,10 @@ export function FullLogo(props: React.SVGProps<SVGSVGElement>) {
       </g>
       
       {/* Text Part */}
-      <text x="60" y="36" fontFamily="'PT Sans', sans-serif" fontSize="18" fontWeight="bold" fill="#5A39A8">HEALTH BOX</text>
-      <line x1="60" y1="41" x2="144" y2="41" stroke="#E54D42" strokeWidth="2" />
-      <line x1="144" y1="41" x2="197" y2="41" stroke="#5A39A8" strokeWidth="2" />
-      <text x="128.5" y="54" fontFamily="'PT Sans', sans-serif" fontSize="10" fill="#E54D42" letterSpacing="0.5" textAnchor="middle">MEDICAL CENTER</text>
+      <text x="60" y="38" fontFamily="'PT Sans', sans-serif" fontSize="22" fontWeight="bold" fill="#5A39A8">HEALTH BOX</text>
+      <line x1="60" y1="43" x2="188" y2="43" stroke="#E54D42" strokeWidth="2" />
+      <line x1="188" y1="43" x2="220" y2="43" stroke="#5A39A8" strokeWidth="2" />
+      <text x="140" y="56" fontFamily="'PT Sans', sans-serif" fontSize="10" fill="#E54D42" letterSpacing="0.5" textAnchor="middle">MEDICAL CENTER</text>
     </svg>
   );
 }
