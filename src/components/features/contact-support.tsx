@@ -20,13 +20,17 @@ export function ContactSupport() {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSend = () => {
-    const mailtoLink = `mailto:samaymandal5@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(message)}`;
-    window.location.href = mailtoLink;
-    setOpen(false);
-  }
+  const mailtoLink = `mailto:samaymandal5@gmail.com?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(message)}`;
+
+  const handleSendClick = () => {
+    // A small delay can help ensure the mailto link is processed
+    // before the dialog is closed.
+    setTimeout(() => {
+      setOpen(false);
+    }, 100);
+  };
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -70,8 +74,13 @@ export function ContactSupport() {
           </div>
           </div>
           <DialogFooter>
-            <Button onClick={handleSend} disabled={!subject || !message}>
-              Send Message
+            <Button asChild disabled={!subject || !message}>
+              <a 
+                href={!subject || !message ? undefined : mailtoLink}
+                onClick={handleSendClick}
+              >
+                Send Message
+              </a>
             </Button>
           </DialogFooter>
       </DialogContent>
