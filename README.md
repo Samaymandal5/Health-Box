@@ -33,7 +33,7 @@
 
 | Home Page | AI Diet Plan | Mental Health Chat |
 |----------|--------------|--------------------|
-| ![Home](screenshots/home.png) | ![Diet](screenshots/diet.png) | ![Chat](screenshots/chat.png) |
+| ![Home]("E:\Pictures\Screenshots\Screenshot 2025-07-03 000828.png") | ![Diet](screenshots/diet.png) | ![Chat](screenshots/chat.png) |
 
 ---
 
