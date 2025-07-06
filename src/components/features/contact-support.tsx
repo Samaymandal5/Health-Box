@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -22,15 +21,12 @@ export function ContactSupport() {
   const [message, setMessage] = useState('');
 
   const handleSend = () => {
-    // Close the dialog when the mail client is opened, after a short delay.
-    setTimeout(() => {
-        setOpen(false);
-    }, 500);
+    const mailtoLink = `mailto:samaymandal5@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(message)}`;
+    window.location.href = mailtoLink;
+    setOpen(false);
   }
-
-  const mailtoLink = `mailto:samaymandal5@gmail.com?subject=${encodeURIComponent(
-    subject
-  )}&body=${encodeURIComponent(message)}`;
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -74,8 +70,8 @@ export function ContactSupport() {
           </div>
           </div>
           <DialogFooter>
-            <Button asChild disabled={!subject || !message}>
-                <Link href={mailtoLink} onClick={handleSend} target="_blank" rel="noopener noreferrer">Send Message</Link>
+            <Button onClick={handleSend} disabled={!subject || !message}>
+              Send Message
             </Button>
           </DialogFooter>
       </DialogContent>
