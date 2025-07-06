@@ -8,6 +8,7 @@ import {
   HeartPulse,
   ArrowRight,
   Gem,
+  Stethoscope,
 } from "lucide-react";
 import {
   Card,
@@ -54,6 +55,13 @@ const features = [
     description: "Manage stress and anxiety with AI-driven support.",
     link: "/dashboard/mental-health",
     color: "text-purple-500",
+  },
+  {
+    icon: Stethoscope,
+    title: "Find Doctors & Hospitals",
+    description: "Search for medical services in your area.",
+    link: "/dashboard/find-doctors",
+    color: "text-cyan-500",
   },
   {
     icon: HeartPulse,

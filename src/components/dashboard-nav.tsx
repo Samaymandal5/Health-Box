@@ -16,6 +16,7 @@ import {
   BrainCircuit,
   HeartPulse,
   Gem,
+  Stethoscope,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +27,7 @@ const navItems = [
   { href: "/dashboard/diet-planner", icon: Salad, label: "AI Diet Planner" },
   { href: "/dashboard/exercise-planner", icon: Dumbbell, label: "Exercise Planner" },
   { href: "/dashboard/mental-health", icon: BrainCircuit, label: "Mental Health" },
+  { href: "/dashboard/find-doctors", icon: Stethoscope, label: "Find Doctors" },
   { href: "/dashboard/wellness-corner", icon: HeartPulse, label: "Wellness Corner" },
   { href: "/dashboard/subscription", icon: Gem, label: "Subscription" },
 ];
