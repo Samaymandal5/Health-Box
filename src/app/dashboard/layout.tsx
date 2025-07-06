@@ -27,6 +27,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Logo } from "@/components/logo";
 import { DashboardNav } from "@/components/dashboard-nav";
 import { SidebarProvider } from "@/components/ui/sidebar";
+import { ContactSupport } from "@/components/features/contact-support";
 
 export default function DashboardLayout({
   children,
@@ -58,9 +59,7 @@ export default function DashboardLayout({
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
-                  <Button size="sm" className="w-full">
-                    Contact Support
-                  </Button>
+                  <ContactSupport />
                 </CardContent>
               </Card>
             </div>
