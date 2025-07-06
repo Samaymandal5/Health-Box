@@ -56,7 +56,7 @@ const findMedicalServicesTool = ai.defineTool(
 );
 
 
-export const FindDoctorsInputSchema = z.object({
+const FindDoctorsInputSchema = z.object({
   problem: z.string().describe("The user's health problem or required specialty (e.g., 'heart pain', 'pediatrician')."),
   town: z.string().describe('The town or area.'),
   city: z.string().describe('The city.'),
@@ -64,7 +64,7 @@ export const FindDoctorsInputSchema = z.object({
 });
 export type FindDoctorsInput = z.infer<typeof FindDoctorsInputSchema>;
 
-export const FindDoctorsOutputSchema = z.object({
+const FindDoctorsOutputSchema = z.object({
   results: z.array(MedicalServiceSchema).describe('A list of found doctors and hospitals.'),
 });
 export type FindDoctorsOutput = z.infer<typeof FindDoctorsOutputSchema>;
