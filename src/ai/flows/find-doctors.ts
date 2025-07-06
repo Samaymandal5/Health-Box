@@ -29,29 +29,40 @@ const findMedicalServicesTool = ai.defineTool(
   },
   async ({query}) => {
     // In a real application, you would use an API like the Google Places API here.
-    // For this example, we'll return mock data based on the query.
-    console.log(`Searching for: ${query}`);
-    if (query.toLowerCase().includes('springfield')) {
-      return [
-        {
-          name: 'Springfield General Hospital',
-          address: '123 Main St, Springfield, IL 62704',
-          googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Springfield+General+Hospital',
-        },
-        {
-          name: 'Dr. John Doe, Cardiologist',
-          address: '456 Oak Ave, Springfield, IL 62701',
-          googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Dr+John+Doe+Cardiologist+Springfield',
-        },
-      ];
-    }
-    return [
-        {
-            name: 'General Clinic',
-            address: '789 Pine St, Anytown, USA 12345',
-            googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=General+Clinic+Anytown',
-        }
+    // For this example, we'll generate dynamic mock data based on the query.
+    console.log(`Generating mock data for query: ${query}`);
+
+    // Basic parsing of the query to extract specialty and location.
+    const queryParts = query.toLowerCase().split(' in ');
+    const specialty = queryParts[0] || 'Medical'; // e.g., 'cardiologists'
+    const location = queryParts[1] || 'Anytown, USA'; // e.g., 'springfield, il'
+
+    const capitalize = (s: string) => s.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    
+    const specialtyCapitalized = capitalize(specialty);
+    const locationCapitalized = capitalize(location.split(',')[0]);
+
+    const mockResults = [
+      {
+        name: `${locationCapitalized} General Hospital`,
+        address: `100 Health St, ${locationCapitalized}`,
+        googleMapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${locationCapitalized} General Hospital`)}`,
+      },
+      {
+        name: `Dr. Evelyn Reed, ${specialtyCapitalized}`,
+        address: `200 Wellness Way, ${locationCapitalized}`,
+        googleMapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Dr. Evelyn Reed, ${specialtyCapitalized}, ${locationCapitalized}`)}`,
+      },
+      {
+        name: `The ${specialtyCapitalized} Clinic of ${locationCapitalized}`,
+        address: `300 Care Blvd, ${locationCapitalized}`,
+        googleMapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`The ${specialtyCapitalized} Clinic of ${locationCapitalized}`)}`,
+      }
     ];
+
+    // Return a subset of the results to make it look more realistic.
+    const numResults = Math.floor(Math.random() * 2) + 2; // Return 2 or 3 results
+    return mockResults.slice(0, numResults);
   }
 );
 
@@ -62,12 +73,12 @@ const FindDoctorsInputSchema = z.object({
   city: z.string().describe('The city.'),
   state: z.string().describe('The state or province.'),
 });
-export type FindDoctorsInput = z.infer<typeof FindDoctorsInputSchema>;
+type FindDoctorsInput = z.infer<typeof FindDoctorsInputSchema>;
 
 const FindDoctorsOutputSchema = z.object({
   results: z.array(MedicalServiceSchema).describe('A list of found doctors and hospitals.'),
 });
-export type FindDoctorsOutput = z.infer<typeof FindDoctorsOutputSchema>;
+type FindDoctorsOutput = z.infer<typeof FindDoctorsOutputSchema>;
 
 const prompt = ai.definePrompt({
     name: 'findDoctorsPrompt',

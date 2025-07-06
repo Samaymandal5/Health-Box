@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { findDoctors, FindDoctorsInput, FindDoctorsOutput } from "@/ai/flows/find-doctors";
+import { findDoctors } from "@/ai/flows/find-doctors";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -29,12 +29,26 @@ import { Skeleton } from "../ui/skeleton";
 import { MapPin, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
+// Schemas defined locally to avoid importing from a 'use server' file
+const MedicalServiceSchema = z.object({
+  name: z.string(),
+  address: z.string(),
+  googleMapsUrl: z.string().url(),
+});
+
+const FindDoctorsOutputSchema = z.object({
+  results: z.array(MedicalServiceSchema),
+});
+type FindDoctorsOutput = z.infer<typeof FindDoctorsOutputSchema>;
+
 const FindDoctorsInputSchema = z.object({
   problem: z.string().min(1, "Problem or specialty is required."),
   town: z.string().min(1, "Town is required."),
   city: z.string().min(1, "City is required."),
   state: z.string().min(1, "State is required."),
 });
+type FindDoctorsInput = z.infer<typeof FindDoctorsInputSchema>;
+
 
 export function FindDoctors() {
   const [results, setResults] = useState<FindDoctorsOutput['results'] | null>(null);
