@@ -22,7 +22,7 @@
 
 ## 🖥️ Tech Stack
 
-- **Frontend:** HTML, CSS, JavaScript  
+- **Frontend:** Typescript, CSS, JavaScript  
 - **Backend / Services:** Firebase Auth + Realtime Database, Socket.io, AI APIs  
 - **Maps & Geo:** Google Maps API or OpenStreetMap  
 - **Hosting:** Firebase Hosting / GitHub Pages  
